@@ -2985,6 +2985,8 @@
 				};
 
 				pwm@b300 {
+					linux,phandle = <0x291>;
+					phandle = <0x291>;
 					compatible = "qcom,qpnp-pwm";
 					reg = <0xb300 0x100 0xb042 0x7e>;
 					reg-names = "qpnp-lpg-channel-base", "qpnp-lpg-lut-base";
@@ -3023,11 +3025,11 @@
 						label = "rgb";
 						qcom,id = <0x03>;
 						qcom,mode = "pwm";
-						pwms = <0x81 0x00 0x00>;
+						pwms = <0x291 0x00 0x00>;
 						qcom,pwm-us = <0x3e8>;
 						qcom,max-current = <0x0c>;
 						qcom,default-state = "off";
-						linux,name = "red";
+						linux,name = "blue";
 						qcom,start-idx = <0x00>;
 						qcom,idx-len = <0x16>;
 						qcom,duty-pcts = [01 0a 14 1e 28 32 3c 46 50 5a 64 64 5a 50 46 3c 32 28 1e 14 0a 01];
@@ -3057,7 +3059,7 @@
 						qcom,pwm-us = <0x3e8>;
 						qcom,max-current = <0x0c>;
 						qcom,default-state = "off";
-						linux,name = "blue";
+						linux,name = "red";
 						qcom,start-idx = <0x00>;
 						qcom,idx-len = <0x16>;
 						qcom,duty-pcts = <0x03 0x6090c0f 0x12151512 0xf0c0906 0x3000000>;
@@ -12763,6 +12765,7 @@
 			};
 
 			qcom,camera@0 {
+				qcom,led-flash-src = <0x292>;
 				cell-index = <0x00>;
 				compatible = "qcom,camera";
 				reg = <0x00>;
@@ -15899,6 +15902,8 @@
 		};
 
 		qcom,camera-flash@0 {
+			linux,phandle = <0x292>;
+			phandle = <0x292>;
 			cell-index = <0x00>;
 			compatible = "qcom,camera-flash";
 			qcom,flash-source = <0x283 0x284>;
